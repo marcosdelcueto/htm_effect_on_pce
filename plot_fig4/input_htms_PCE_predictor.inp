@@ -1,0 +1,55 @@
+#################################################
+# Input values read by htms_PCE_predictor.py
+#################################################
+#################################################
+############# Input/Output Options ##############
+#################################################
+inp_csv_file = 'database_heterogeneous.csv'
+print_plots = True
+#################################################
+################ Parallelization ################
+#################################################
+NCPU = 1                                        # select number of CPUs (-1 means all CPUs in a node) (ONLY USED IF "optimize_hyperparams = True")
+#################################################
+############# Descriptors Options ###############
+#################################################
+xcols_fp  = ['fingerprint']
+xcols_mol = ['phthalocyanine', 'porphyrin', 'carbazole', 'triphenylamine', 'polymer', 'acenaphthene', 'benzotrithiophene', 'Silicon atoms', 'rotatable_bonds', 'aliphatic_carbocycles', 'aliphatic_heterocycles', 'stereocenters']
+xcols_type= ['OHE_Family_1','OHE_Family_2','OHE_Family_3','OHE_Family_4','OHE_Family_5','OHE_Family_6']
+xcols_arch= ['OHE_IP','OHE_M','OHE_P']
+xcols_dft = ['HOMO_E','LUMO_E','Reorg']
+xcols_dope= ['OHE_LiTFSi','OHE_t-BP','OHE_FK102','OHE_FK209','OHE_FK269','OHE_F4-TCNQ','OHE_MY11','OHE_Et4N-TFSI','OHE_H-TFSI','OHE_2-Py']
+ycols     = ['PCE (%)']
+#################################################
+########## Machine Learning Parameters ##########
+#################################################
+ML = 'KRR'
+optimize_hyperparams = False
+### Cross-validation ############################
+CV = 'loo'
+kfold = 10
+test_proportion = 0.1
+### General hyperparameters #####################
+gamma_fp   = 1.0
+gamma_mol  = 0.000012
+gamma_type = 0.179072
+gamma_arch = 0.154827
+gamma_dft  = 0.000640
+gamma_dope = 0.020764
+gamma_fp_lim   = (0.000000001,10.0)
+gamma_mol_lim  = (0.000000001,10.0)
+gamma_type_lim = (0.000000001,10.0)
+gamma_arch_lim = (0.000000001,10.0)
+gamma_dft_lim  = (0.000000001,10.0)
+gamma_dope_lim = (0.000000001,10.0)
+### k-Nearest Neighbors ('kNN') #################
+Neighbors = [2,3,4,5,6,7,8,9,10,11,12] 
+### Kernel Ridge Regression ('KRR') #############
+alpha = 0.431047
+alpha_lim = (0.000000001,100.0)
+#################################################
+# Differential evolution parameters
+#################################################
+diff_popsize = 15                               # population size
+diff_tol = 0.01                                 # relative tolerance for convergence
+################################################# 
