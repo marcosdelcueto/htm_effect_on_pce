@@ -618,7 +618,9 @@ def get_pred_errors(y_cv_real,y_cv_predicted,y_test_real,y_test_predicted,ML_alg
         gamma_arch = ML_algorithm.get_params()['metric_params']['gamma_arch']
         gamma_dft = ML_algorithm.get_params()['metric_params']['gamma_dft']
         gamma_dope = ML_algorithm.get_params()['metric_params']['gamma_dope']
-        print('k: %i, gamma_fp: %.6f, gamma_mol: %.6f, gamma_type: %.6f, gamma_arch: %.6f, gamma_dft: %.6f, gamma_dope: %.6f,r_cv: %.4f, rho_cv: %.4f, rmse_cv: %.4f, median_error_cv: %.4f, r_test: %.4f, rho_test: %.4f, rmse_test: %.4f, median_error_test: %.4f' %(k,gamma_fp,gamma_mol,gamma_type,gamma_arch,gamma_dft,gamma_dope,r_cv,rho_cv,rms_cv,median_error_cv,r_test,rho_test,rms_test,median_error_test))
+        print('k: %i, gamma_fp: %.6f, gamma_mol: %.6f, gamma_type: %.6f, gamma_arch: %.6f, gamma_dft: %.6f, gamma_dope: %.6f' %(k,gamma_fp,gamma_mol,gamma_type,gamma_arch,gamma_dft,gamma_dope))
+        print('r_cv:   %.2f, rho_cv:   %.2f, rmse_cv:   %.2f, median_error_cv:   %.2f' %(r_cv,rho_cv,rms_cv,median_error_cv))
+        print('r_test: %.2f, rho_test: %.2f, rmse_test: %.2f, median_error_test: %.2f' %(r_test,rho_test,rms_test,median_error_test))
         sys.stdout.flush()
     if ML=='KRR':
         alpha    = ML_algorithm.get_params()['alpha']
@@ -628,7 +630,9 @@ def get_pred_errors(y_cv_real,y_cv_predicted,y_test_real,y_test_predicted,ML_alg
         gamma_arch = ML_algorithm.get_params()['kernel_params']['gamma_arch']
         gamma_dft = ML_algorithm.get_params()['kernel_params']['gamma_dft']
         gamma_dope = ML_algorithm.get_params()['kernel_params']['gamma_dope']
-        print('gamma_fp: %.6f, gamma_mol: %.6f, gamma_type: %.6f, gamma_arch: %.6f, gamma_dft: %.6f, gamma_dope: %.6f,alpha: %.6f, r_cv: %.4f, rho_cv: %.4f, rmse_cv: %.4f, median_error_cv: %.4f, r_test: %.4f, rho_test: %.4f, rmse_test: %.4f, median_error_test: %.4f' %(gamma_fp,gamma_mol,gamma_type,gamma_arch,gamma_dft,gamma_dope,alpha,r_cv,rho_cv,rms_cv,median_error_cv,r_test,rho_test,rms_test,median_error_test))
+        print('gamma_fp: %.6f, gamma_mol: %.6f, gamma_type: %.6f, gamma_arch: %.6f, gamma_dft: %.6f, gamma_dope: %.6f,alpha: %.6f' %(gamma_fp,gamma_mol,gamma_type,gamma_arch,gamma_dft,gamma_dope,alpha))
+        print('r_cv  : %.2f, rho_cv:   %.2f, rmse_cv:   %.2f, median_error_cv:   %.2f' %(r_cv,rho_cv,rms_cv,median_error_cv))
+        print('r_test: %.2f, rho_test: %.2f, rmse_test: %.2f, median_error_test: %.2f' %(r_test,rho_test,rms_test,median_error_test))
         sys.stdout.flush()
     return rms_cv
 
